@@ -23,7 +23,7 @@ export function connectChatWS({
 }: WSOptions) {
   const url =
     (location.protocol === "https:" ? "wss://" : "ws://") +
-    `localhost:8000/ws/chat/${roomId}/`;
+    `backend-socialnetwork-1cmf.onrender.com/ws/chat/${roomId}/`;
 
   let ws = new WebSocket(url);
 
@@ -62,7 +62,7 @@ export function connectNotificationWS({
 }: NotificationWSOptions) {
   const url =
     (location.protocol === "https:" ? "wss://" : "ws://") +
-    `localhost:8000/ws/notifications/`;
+    `backend-socialnetwork-1cmf.onrender.com/ws/notifications/`;
 
   let ws = new WebSocket(url);
   console.log(ws)
