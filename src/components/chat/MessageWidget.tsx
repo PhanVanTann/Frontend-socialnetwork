@@ -148,7 +148,7 @@ export default function MessageWidget() {
     wsThreadRef.current?.close();
     wsThreadRef.current = connectChatWS({
       roomId,
-      userId: currentUserId,
+      
       onOpen: () => console.log("WS(thread) open", roomId),
       onMessage: (data: any) => {
         if (String(data.send_id) === String(currentUserId)) return;

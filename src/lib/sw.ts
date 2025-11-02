@@ -20,8 +20,8 @@ export function connectChatWS({
   onError,
 }: WSOptions) {
   const url =
-    (location.protocol === "https://" ? "wss://" : "ws://") +
-    `backend-socialnetwork-1cmf.onrender.com/ws/chat/${roomId}/`;
+    (location.protocol === "https:" ? "wss:" : "ws:") +
+    `//backend-socialnetwork-1cmf.onrender.com/ws/chat/${roomId}/`;
 
   let ws = new WebSocket(url);
 
@@ -59,8 +59,8 @@ export function connectNotificationWS({
   onError,
 }: NotificationWSOptions) {
   const url =
-    (location.protocol === "https://" ? "wss://" : "ws://") +
-    `backend-socialnetwork-1cmf.onrender.com/ws/notifications/`;
+    (location.protocol === "https:" ? "wss:" : "ws:") +
+    `//backend-socialnetwork-1cmf.onrender.com/ws/notifications/`;
 
   let ws = new WebSocket(url);
   console.log(ws)
