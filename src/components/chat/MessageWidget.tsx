@@ -76,11 +76,10 @@ export default function MessageWidget() {
   // WS "inbox theo user" → khi có tin đến thì fetch noti (throttle) nếu KHÔNG ở trang /notifications
   useEffect(() => {
     if (!currentUserId) return;
-    const inboxChannel = `inbox:${currentUserId}`; // đổi nếu BE dùng tên khác
+    const inboxChannel = `${currentUserId}`; // đổi nếu BE dùng tên khác
     wsInboxRef.current?.close();
     wsInboxRef.current = connectChatWS({
       roomId: inboxChannel,
-      userId: currentUserId,
       onOpen: () => console.log("WS(inbox) open", inboxChannel),
       onMessage: (data: any) => {
         if (String(data.send_id) === String(currentUserId)) return; // bỏ tự echo

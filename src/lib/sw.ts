@@ -1,6 +1,5 @@
 export type WSOptions = {
   roomId: string;
-  userId: string;
   onMessage: (data: any) => void;
   onOpen?: () => void;
   onClose?: (ev: CloseEvent) => void;
@@ -15,7 +14,6 @@ export type NotificationWSOptions = {
 
 export function connectChatWS({
   roomId,
-  userId,
   onMessage,
   onOpen,
   onClose,
