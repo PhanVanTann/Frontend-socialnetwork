@@ -115,7 +115,7 @@ export default function Login() {
                           // tuỳ chọn
                           console.log("Google Login Failed");
                         }}
-                        useOneTap                   // bật One Tap (tuỳ thích)
+                        useOneTap={false}                 // bật One Tap (tuỳ thích)
                       />
                 </button>
             </div>
